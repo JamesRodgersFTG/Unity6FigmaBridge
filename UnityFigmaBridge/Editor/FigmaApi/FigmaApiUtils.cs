@@ -62,6 +62,8 @@ namespace UnityFigmaBridge.Editor.FigmaApi
         {
             // Legacy Format is https://www.figma.com/file/{DOC_ID}/{NAME}?node-id={NODE}
             // New format is https://www.figma.com/design/{DOC_ID}/{NAME}?node-id={NODE}
+
+            if (string.IsNullOrEmpty(url)) return (false, "");
             
             var legacyInitialSection = "https://www.figma.com/file/";
             var modernInitialSection = "https://www.figma.com/design/";
